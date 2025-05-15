@@ -1,0 +1,321 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    min-height: 100vh;
+}
+
+.center-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    background: #181818;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(33, 147, 176, 0.2);
+    width: 350px;
+    padding: 36px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab-switch {
+    display: flex;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.tab-switch button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: #222;
+    color: #aaa;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-switch button.active {
+    background: #fff;
+    color: #111;
+}
+
+.form-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-section h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.form-section input,
+.form-section select {
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    border: 1.5px solid #333;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #222;
+    color: #fff;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+    border: 1.5px solid #fff;
+}
+
+.form-section button[type="submit"] {
+    background: linear-gradient(90deg, #111 0%, #444 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 6px rgba(33, 147, 176, 0.07);
+}
+
+.form-section button[type="submit"]:hover {
+    background: linear-gradient(90deg, #444 0%, #111 100%);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+#dashboard {
+    min-height: 100vh;
+    background: #000;
+}
+
+nav {
+    background: #181818;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 40px;
+    box-shadow: 0 2px 10px rgba(33, 147, 176, 0.08);
+}
+
+.nav-title {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+.portal {
+    background: #181818;
+    margin: 38px auto;
+    border-radius: 14px;
+    max-width: 420px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(33, 147, 176, 0.13);
+    text-align: center;
+}
+
+.portal h2 {
+    color: #fff;
+    margin-bottom: 22px;
+}
+
+.portal form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: stretch;
+}
+
+.portal input {
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 1.2px solid #222;
+    font-size: 15px;
+    background: #222;
+    color: #fff;
+}
+
+.portal button[type="submit"],
+#loadPatients {
+    background: linear-gradient(90deg, #111 0%, #444 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 6px rgba(33, 147, 176, 0.07);
+}
+
+.portal button[type="submit"]:hover,
+#loadPatients:hover {
+    background: linear-gradient(90deg, #444 0%, #111 100%);
+}
+
+#createResult,
+#patientsList {
+    margin-top: 17px;
+    font-size: 15px;
+    color: #fff;
+}
+
+#patientsList ul {
+    list-style: none;
+    padding: 0;
+}
+
+#patientsList li {
+    background: #222;
+    margin-bottom: 10px;
+    padding: 13px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(33, 147, 176, 0.07);
+    color: #fff;
+}
+
+.patient-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.patient-card {
+    background: #222;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.patient-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.patient-id {
+    background: #2193b0;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.patient-name {
+    margin: 0;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.patient-details {
+    display: grid;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.patient-details p {
+    margin: 0;
+    color: #fff;
+}
+
+.diagnosis {
+    color: #2193b0;
+    font-weight: 700;
+    margin-top: 1rem !important;
+}
+
+.edit-btn,
+.delete-btn {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    background: linear-gradient(90deg, #111 0%, #444 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 6px rgba(33, 147, 176, 0.07);
+    outline: none;
+}
+
+.edit-btn:hover {
+    background: linear-gradient(90deg, #444 0%, #111 100%);
+}
+
+.delete-btn {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    margin-right: 0;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(90deg, #c0392b 0%, #e74c3c 100%);
+}
+
+#editPatientModal input {
+    background: #222;
+    color: #fff;
+    border: 1.2px solid #222;
+    border-radius: 5px;
+    padding: 10px 12px;
+    font-size: 15px;
+}

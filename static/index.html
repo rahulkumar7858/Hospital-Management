@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="center-container" id="auth-container">
+        <div class="auth-card">
+            <div class="tab-switch">
+                <button id="login-tab" class="active" onclick="showForm('login')">Login</button>
+                <button id="signup-tab" onclick="showForm('signup')">Sign Up</button>
+            </div>
+            <form id="login-form" class="form-section" onsubmit="return login(event)">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <select id="login-role">
+                    <option value="doctor">Doctor</option>
+                    <option value="receptionist">Receptionist</option>
+                </select>
+                <button type="submit">Login</button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+            <form id="signup-form" class="form-section" style="display:none" onsubmit="return signup(event)">
+                <h2>Sign Up</h2>
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <select id="signup-role">
+                    <option value="doctor">Doctor</option>
+                    <option value="receptionist">Receptionist</option>
+                </select>
+                <button type="submit">Sign Up</button>
+                <div id="signup-error" class="error-message"></div>
+                <div id="signup-success" class="success-message"></div>
+            </form>
+        </div>
+    </div>
+    <div id="dashboard" style="display:none">
+        <nav>
+            <span class="nav-title">Hospital Management System</span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </nav>
+        <div id="reception-portal" class="portal">
+            <h2>Receptionist Portal</h2>
+            <form id="createPatientForm" onsubmit="return createPatient(event)">
+                <input type="text" id="pname" placeholder="Patient Name" required>
+                <input type="number" id="page" placeholder="Age" required>
+                <input type="text" id="pgender" placeholder="Gender" required>
+                <button type="submit">Create Patient</button>
+            </form>
+            <div id="createResult"></div>
+            <div id="receptionPatientsList"></div>
+            <div id="editPatientModal"
+                style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:1000;">
+                <form id="editPatientForm"
+                    style="background:#181818; padding:2rem; border-radius:10px; min-width:320px; display:flex; flex-direction:column; gap:1rem;"
+                    onsubmit="return updatePatient(event)">
+                    <input type="hidden" id="editPatientId">
+                    <input type="text" id="edit-pname" placeholder="Patient Name" required>
+                    <input type="number" id="edit-page" placeholder="Age" required>
+                    <input type="text" id="edit-pgender" placeholder="Gender" required>
+                    <input type="text" id="edit-pdiagnosis" placeholder="Diagnosis">
+                    <button type="submit">Update Patient</button>
+                    <div id="editResult"></div>
+                    <button type="button" onclick="closeEditModal()">Cancel</button>
+                </form>
+            </div>
+        </div>
+        <div id="doctor-portal" class="portal">
+            <h2>Doctor Portal</h2>
+            <button id="loadPatients" onclick="loadPatients()">Load Patients</button>
+            <div id="patientsList"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
